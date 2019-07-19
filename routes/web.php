@@ -13,4 +13,9 @@
 
 Route::get('/', function () {
     return view('welcome');
+
 });
+
+Route::get('/facebook/bot/callback','TinngBotController@bot')->middleware('verifybot');
+
+Route::post('/facebook/bot/callback','TinngBotController@bot');
